@@ -1,0 +1,56 @@
+{% extends "higiene/base.html" %}
+
+{%block title %} Productos {% endblock%}
+
+{% block content%}
+<div class="section container" >
+        <div class="row">
+            <form class="col s12">
+                <div class="container col s12 text-align: center">
+                    <div class="row card-panel" >
+                        <div class="col s6">
+                          <a class="waves-effect waves-light btn-large" href="agregarProducto">Agregar Productos</a>
+                        </div>
+
+
+                        <div class="col s6">
+                          <a class="waves-effect waves-light btn-large" href="eliminar_productos">Eliminar Productos</a>
+                        </div>
+
+                        <div class="col s6">
+                          <a class="waves-effect waves-light btn-large" href="#">Buscar Productos</a>
+                        </div>
+
+                        <div class="col s6">
+                          <a class="waves-effect waves-light btn-large" href="listar_productos">Listar Productos</a>
+                      </div>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+</div>
+
+{% endblock %}
+
+{% block javascript%}
+    <script>
+        $(document).ready(function(){
+        $('select').formSelect();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        M.AutoInit();
+      });
+    </script>
+{% endblock %}

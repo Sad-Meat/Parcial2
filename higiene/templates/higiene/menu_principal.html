@@ -1,0 +1,154 @@
+{% extends "higiene/base.html" %}
+
+{%block title %} Menú {% endblock%}
+
+{% block content%}
+<!-- Carrusel -->
+    <section class="container">
+      <div class="row col s12 cyan lighten-3">
+        <h3 style= "color: white; text-align: center; "> Nuevos Productos </h3>
+        <div class="carousel col s12">
+          <a class="carousel-item" href="#"><img src="/media/imagenes/alcoholgel.jpg" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/lisoform.png" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/Alcohol-Etilico-ra-1200x1200.png" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/toallas_humedas.png" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/antiseptic_PNG60.png" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/lysoform-bathroom-500cm3.png" alt="Erorr de carga"></a>
+          <a class="carousel-item" href="#"><img src="/media/imagenes/lysol.png" alt="Erorr de carga"></a>
+        </div>
+      </div>
+    </section>
+
+<!-- Ofertas de productos -->
+    <div class="row cyan lighten-3">
+      <div class="row col 12 cyan lighten-3">
+        <h3 style= "color: white; text-align:center; "> Ofertas </h3>
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image">
+              <img src="/media/imagenes/antiseptic_PNG60.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Alcohol gel antiseptico 800ml</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$3.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/Desinfectante.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Desinfectante 5L</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$6.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/detergente.jpg" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Detergente liquido 5L</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$8.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card" >
+            <div class="card-image" >
+              <img src="/media/imagenes/lysol.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Lysol aerosol</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$1.990</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row col 12 cyan lighten-3">
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/lysol_toallitas.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content" >
+              <p>Lysol toallitas 100 unidades</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$3.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/Alcohol-Etilico-ra-1200x1200.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Alcohol etilico 5L</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$9.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/cloro_toallitas.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Clorox toallitas 10 unidades</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$4.990</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s3">
+          <div class="card">
+            <div class="card-image" >
+              <img src="/media/imagenes/lisoform.png" width="300" height="300" alt="Erorr de carga">
+            </div>
+            <div class="card-content">
+              <p>Lysoform aerosol</p>
+            </div>
+            <div class="card-action">
+              <a href="#">$1.990</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript%}
+<!-- Carrusel -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems, {
+    indicators: true,             //opcion para que el carrusel muestre indicadores de imagenes
+     });
+  });
+   </script>
+{% endblock %}
