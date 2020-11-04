@@ -8,10 +8,15 @@
       <div class="row">
           <form class="col s12" style=" margin-top: 5%;">
               <div class="row card-panel" style="margin: auto;">
+                <h4 style="color: rgb(0, 196, 196);text-align: center; margin-bottom: 5%;">Productos</h4>
                   La cantidad de productos es {{listado|length}}
                     <br><br>
                     {% for producto in listado %}
 
+                    <div class="input-field col s2">
+                        <label  style="color: black;">ID: </label> <br> <br> {{ producto.id_producto }}
+                    </div>
+                
                     <div class="input-field col s2">
                         <label style="color: black;">Nombre: </label> <br> <br>{{ producto.nombre }}
                     </div>
@@ -28,10 +33,13 @@
                         <label style="color: black;">Fecha Envasado: </label> <br> <br> {{ producto.fecha_env }}
                     </div>
 
-                    <div class="input-field col s4">
-                        <label style="color: black;">Imagen: </label> <br> <br> {{ producto.imagen }}
+                    <div class="input-field col s2">
+                        <label style="color: black;">imagen: </label> <br> <br> {{ producto.imagen }}
                     </div>
                     {% endfor %}
+
+                    <a class="waves-effect waves-light btn-large" href="productos_general">Volver</a>
+
               </div>
           </form>
       </div>

@@ -1,0 +1,102 @@
+{% extends "higiene/base.html" %}
+
+{%block title %} Comentarios {% endblock%}
+
+{% block content%}
+    <!-- Formulario -->
+    <div class="section container">
+        <div class="row">
+            <form class="col s12">
+                <div class="row card-panel">
+                    <h4 style="text-align: center; margin-bottom: 5%;">Datos personales</h4>
+                    <div class="input-field col s4">
+                        <input type="text" style="color: black;" id="rut" name="rut" class="validate" required >
+                        <label style="color: black;" for="rut">Rut:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="email" style="color: black;" id="mail" name="mail" placeholder="xxxx@xx.cl " class="validate" required >
+                        <label style="color: black;" for="mail">Correo:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="password" style="color: black;" id="cont" name="cont"  class="validate" required>
+                        <label style="color: black; " for="cont">Contraseña:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text"   id="nombr" name="nombre" class="validate" required>
+                        <label style="color: black;" for="nombr">Nombre:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text"   id="apP" name="apP" class="validate" required>
+                        <label style="color: black;" for="apP">Apellido Paterno:</label>
+                    </div>
+                    <div class="input-field col s4">
+                        <input type="text"   id="apM" name="apM" class="validate" required>
+                        <label style="color: black;" for="apM">Apellido Materno:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="number"   id="tel" name="telefono" class="validate" placeholder="(opcional)" >
+                        <label style="color: black;" for="tel">Telefono:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="number" id="cel" name="celular" class="validate" required>
+                        <label style="color: black;" for="cel">Celular:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text"  id="di" name="direccion" class="validate" required>
+                        <label style="color: black;" for="di">Dirección:</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <select  id="com" name="com" required>
+                            <option value="" disabled selected>Selecciona una comuna</option>
+                            <option value="volvo">San bernardo</option>
+                            <option value="saab">Puente Alto</option>
+                            <option value="fiat">Renca</option>
+                            <option value="audi">Cerrillos</option>
+                            <option value="audi">Maipú</option>
+                            <option value="audi">El Bosque</option>
+                            <option value="audi">La Pintana</option>
+                            <option value="audi">Pudahuel</option>
+                            <option value="audi">Quilicura</option>
+                            <option value="audi">Recoleta</option>
+                            <option value="audi">Santiago</option>
+                        </select>
+                        <label for="com" style="color: black;">Comuna:</label>
+                    </div>
+                    <div class="input-field col s6">
+                            <input type="date"  id="calendar" name="calendar" class="validate" required>
+                            <label style="color: black;" for="calendar" >Fecha de nacimiento:</label>
+                    </div>
+                    <div class="container col s12 text-align: center">
+                    <div class="row">
+                            <a class="waves-effect waves-light btn-large" href="Index2.html">Cancelar</a>
+                            <button class="waves-effect waves-light btn-large" type="submit">Enviar</button>
+                    </div>
+                  </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript%}
+    <script>
+        $(document).ready(function(){
+        $('select').formSelect();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        M.AutoInit();
+      });
+    </script>
+{% endblock %}

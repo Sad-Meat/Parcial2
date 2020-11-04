@@ -1,0 +1,73 @@
+{% extends "higiene/base.html" %}
+
+{%block title %} Listado de Productos {% endblock%}
+
+{% block content%}
+
+    <div class="section container">
+      <div class="row">
+          <form class="col s12" enctype="multipart/form-data" style=" margin-top: 5%;  ">
+              <div class="row card-panel" style="margin: auto;">
+                <h4 style="color: rgb(0, 196, 196);text-align: center; margin-bottom: 5%;">Productos</h4>
+                  La cantidad de productos es {{listado|length}}
+                    <br><br>
+                    {% for producto in listado %}
+                    {% load static %}
+                    <div class="input-field col s2">
+                        <label  style="color: black;">ID: </label> <br> <br> {{ producto.id_producto }}
+                    </div>
+                
+                    <div class="input-field col s2">
+                        <label style="color: black;">Nombre: </label> <br> <br>{{ producto.nombre }}
+                    </div>
+
+                    <div class="input-field col s2">
+                        <label style="color: black;">Precio: </label> <br> <br> {{ producto.precio }}
+                    </div>
+
+                    <div class="input-field col s2">
+                        <label style="color: black;">Marca: </label> <br> <br> {{ producto.marca }}
+                    </div>
+
+                    <div class="input-field col s2">
+                        <label style="color: black;">Fecha Envasado: </label> <br> <br> {{ producto.fecha_env }}
+                    </div>
+
+                    <div class="input-field col s2">
+                        <label for="ima" style="color: black; ">Imagen:</label>
+                        <br><br>
+                        <img src="{{ producto.imagen.url }}" width="100" height="100" id="ima">
+
+                    </div>
+                    {% endfor %}
+
+                    <a class="waves-effect waves-light btn-large" href="productos_general">Volver</a>
+
+              </div>
+          </form>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript%}
+    <script>
+        $(document).ready(function(){
+        $('select').formSelect();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            M.AutoInit();
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        M.AutoInit();
+      });
+    </script>
+{% endblock %}
