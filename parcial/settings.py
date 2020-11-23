@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/higiene/menu_principal'
+LOGOUT_REDIRECT_URL = '/higiene/menu_principal'
+
 
 # Application definition
 
@@ -39,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',
     'higiene',
 ]
 
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'parcial.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,7 +122,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-import os
+
 STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
@@ -128,19 +130,6 @@ MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FILE_UPLOAD_HANDLERS =[
-    'django.core.files.uploadhandler.MemoryFileUploadHandler',
-    'django.core.files.uploadhandler.TemporaryFileUploadHandler'
-]
 
-# en producción hay que eliminar estos backend
-EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.dummy.EmailBackend'
-# fin backend email
-
-ACCOUNT_ACTIVATION_DAYS = 7
-REGISTRATION_OPEN = True
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/higiene/menu_principal'  # The page you want users to arrive at after they successful log in
-LOGIN_URL = '/accounts/login/'

@@ -28,32 +28,14 @@
         <nav class="nav-wrapper cyan darken-2">
           <div class="container">
             <img src="/media/icons/mr.png" style="width: 5%; height: 5%; margin-top: 1%; margin-right: 2%;" alt="Erorr de carga">
-            <a href="menu_principal" class="brand-logo" > Mr Limpieza</a>
+            <a href="#" class="brand-logo" > Mr Limpieza</a>
             <a href="#"  data-target="menu-responsive" class="sidenav-trigger">
               <i class="material-icons">menu</i>
             </a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="menu_principal">Inicio</a></li>
-              <li><a href="productos_general">Productos</a></li>
-              <li><a href="comentarios">Enviar Comentario</a></li>
-
-              {% if user.is_authenticated %}
-              <li><a href="">{{ user.username }}</a></li>
-              <li><a href="{% url 'logout' %}">Cerrar Sesion</a></li>
-              {% else %}
-              <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
-              <li><a href="registro">Crear cuenta</a></li>
-              {% endif %}
-            </ul>
           </div>
         </nav>
-        <ul class="sidenav" id="menu-responsive">
-          <li><a href="menu_principal">Inicio</a></li>
-          <li><a href="productos_general">Productos</a></li>
-          <li><a href="comentarios">Enviar Comentario</a></li>
-          <li><a href="registro">Registrarse</a></li>
-        </ul>
       </div>
+        
 
 
 
@@ -77,8 +59,8 @@
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Enlaces</h5>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="quienesSomos">¿Quienes somos?</a></li>
-              <li><a class="grey-text text-lighten-3" href="comentarios">Envianos un comentario</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">¿Quienes somos?</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Envianos un comentario</a></li>
             </ul>
           </div>
         </div>
@@ -86,7 +68,7 @@
       <div class="footer-copyright">
         <div class="container">
         © 2020 Copyright
-        <a class="grey-text text-lighten-4 right" href="menu_principal">Mr Limpieza</a>
+        <a class="grey-text text-lighten-4 right" href="#">Mr Limpieza</a>
         </div>
       </div>
     </footer>

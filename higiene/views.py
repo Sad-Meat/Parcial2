@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Producto
+from .forms import CustomUserForm
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth import login, authenticate
 # Create your views here.
 
 def menu_principal(request):
@@ -21,11 +24,6 @@ def buscar_productos(request):
     print("ok, estamos en la vista buscar productos")
     context={}
     return render(request,'higiene/buscar_productos.html',context)
-
-def registro(request):
-    print("ok, estamos en la vista registro")
-    context={}
-    return render(request, 'higiene/registro.html',context)
 
 def agregarProducto(request):
     print("ok, estamos en la vista agregarProducto")
@@ -84,6 +82,7 @@ def agregar(request):
     else:
         return render(request, 'higiene/error/error_203.html', {})
 
+@permission_required('higiene.add_producto')
 def productos_general(request):
     print("ok, estamos en la vista productos_general")
     context={}
@@ -193,3 +192,22 @@ def modificar(request):
            return render(request, 'higiene/error/error_201.html', {})
     else:
         return render(request, 'higiene/error/error_203.html', {})
+
+def registro_usuario(request):
+    data = {
+        'form':CustomUserForm()
+    }
+
+    if request.method == 'POST':
+        formulario = CustomUserForm(request.POST)
+        if formulario.is_valid():
+            formulario.save
+            username = formulario.cleaned_data['username']
+            password = formulario.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return render(request, 'higiene/menu_principal.html')
+
+    return render(request, 'registration/registrar.html', data)
+
+    # return redirect(to='home')
