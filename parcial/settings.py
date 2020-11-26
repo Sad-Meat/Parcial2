@@ -32,6 +32,10 @@ LOGIN_REDIRECT_URL = '/higiene/menu_principal'
 LOGOUT_REDIRECT_URL = '/higiene/menu_principal'
 
 
+SOCIAL_AUTH_FACEBOOK_KEY = '1315404518807361'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'e7b42f13eb152717f5bcc4a1b0407c0f'
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'higiene',
+    'pwa',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'parcial.urls'
@@ -68,6 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -130,6 +139,13 @@ MEDIA_URL = '/media/'
 # Path where media is stored
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
 
 SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+        'social_core.backends.facebook.FacebookOAuth2',
+        'django.contrib.auth.backends.ModelBackend',
+)
+
 

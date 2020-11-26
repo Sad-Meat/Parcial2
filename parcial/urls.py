@@ -28,6 +28,8 @@ urlpatterns = [
     path('higiene/',include('higiene.urls')),
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('',include('pwa.urls')),
+    path('oauth/', include('social_django.urls', namespace='social'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
